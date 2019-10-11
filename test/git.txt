@@ -1,0 +1,29 @@
+git init 初始化
+git status 查看状态
+git add 添加到池子
+git commit -m "备注"  提交
+git log 查看提交记录
+git reset --hard e35cfeaaa0ef36fec925b1c026d3b03deb607027   回滚到某个记录
+git rm test.txt 第一步删除本地  git commit -m "删除仓库中文件"  第二部删除后提交 则删的仓库
+git checkout 做了修改，但是没有提交，清空此次修改；
+
+echo "this is neirong">> test.txt 追加内容并创建test.txt文件
+cat test.txt 查看内容
+
+
+创建ssh key
+ssh-keygen -t rsa -C "865796159@qq.com"   复制公钥时，尾端不能多复制空格
+
+
+创建远程仓库
+
+1、git remote add origin git@github.com:fj911001/mystudy1.git  【关联远程仓库】  tylerdemo:你的GitHub用户名   demo4是刚创建的仓库名称
+2、git pull origin master --allow-unrelated-histories
+3、git push -u origin master   【远程】
+
+
+查看是否连接上
+ssh -T git@github.com
+
+
+https://github.com/fj911001/mystudy1.git

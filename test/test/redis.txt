@@ -1,0 +1,15 @@
+Redis数据类型：
+string类型：字符串、整数、浮点
+list类型：元素
+set类型：不同的元素
+hash类型：有key-value的散列组，其中key是字符串，value是元素
+sort set类型：带分数的score-value有序集合，其中score为浮点，value为元素
+
+
+
+
+nginx限流配置
+1、按连接数限速，即并发数（ngx_http_limit_conn_module）
+2、按请求速率限速，安装IP限制单位时间内的请求数（ngx_http_limit_req_module）
+
+
