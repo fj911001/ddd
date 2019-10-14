@@ -160,11 +160,27 @@ git push origin master Git会把master分支推送到远程库对应的远程分支上
 git clone git@github.com:fj911001/school.git
 
 
+标签管理
+git commit -m "commit v1.1" 【提交后】
+git tag			// 查看标签
+git tag v1.1		// 创建标签
+git push origin v1.1	// 标签发布
+
+git tag -a v1.1 -m "commit tag"	// 指定提交信息
+git tag -d v1.1 	// 删除标签
 
 
+分支管理
 
+git commit -m "sxxx" 【提交后】
+git branch feature_x 【创建分支  分支名称 featrue_x】
+git branch // 查看所有分支 【星号在的就是所在分支】
+git checkout feature_x 【切换分支】 
+再提交的代码就是提交到分支上了；
 
+合并到master
+git checkout master 先切换到master
+git merge feature_x 【合并】
 
-
-
+git brandch -d feature_x  // 删除
 
