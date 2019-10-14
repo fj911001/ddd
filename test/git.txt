@@ -156,6 +156,10 @@ git push origin master Git会把master分支推送到远程库对应的远程分支上
 
 
 
+克隆仓库
+git clone git@github.com:fj911001/school.git
+
+
 
 
 
