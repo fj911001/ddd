@@ -1,28 +1,31 @@
-git init ��ʼ��
-git status �鿴״̬
-git add ���ӵ�����
-git commit -m "��ע"  �ύ
-git log �鿴�ύ��¼
-git reset --hard e35cfeaaa0ef36fec925b1c026d3b03deb607027   �ع���ĳ����¼
-git rm test.txt ��һ��ɾ������  git commit -m "ɾ���ֿ����ļ�"  �ڶ���ɾ�����ύ ��ɾ�Ĳֿ�
-git checkout �����޸ģ�����û���ύ����մ˴��޸ģ�
+git init 初始化
+git status 查看状态
+git add 添加到池子
+git commit -m "备注"  提交
+git log 查看提交记录
+git reset --hard e35cfeaaa0ef36fec925b1c026d3b03deb607027   回滚到某个记录
+git rm test.txt 第一步删除本地  git commit -m "删除仓库中文件"  第二部删除后提交 则删的仓库
+git checkout 做了修改，但是没有提交，清空此次修改；
 
-echo "this is neirong">> test.txt ׷�����ݲ�����test.txt�ļ�
-cat test.txt �鿴����
-
-
-����ssh key
-ssh-keygen -t rsa -C "865796159@qq.com"   ���ƹ�Կʱ��β�˲��ܶิ�ƿո�
+echo "this is neirong">> test.txt 追加内容并创建test.txt文件
+cat test.txt 查看内容
 
 
-����Զ�ֿ̲�
+创建ssh key
+1、ssh-keygen -t rsa -C "865796159@qq.com"   复制公钥时，尾端不能多复制空格
+2、或者安装的时候生成的ssh key
+两者生成的key都是在安装目录下的.ssh目录文件下的.pub文件内；
+【链接创建参考https://blog.csdn.net/weixin_38317875/article/details/80925750 】
 
-1��git remote add origin git@github.com:fj911001/mystudy1.git  ������Զ�ֿ̲⡿  tylerdemo:���GitHub�û���   demo4�Ǹմ����Ĳֿ�����
-2��git pull origin master --allow-unrelated-histories
-3��git push -u origin master   ��Զ�̡�
+
+创建远程仓库
+
+1、git remote add origin git@github.com:fj911001/mystudy1.git  【关联远程仓库】  tylerdemo:你的GitHub用户名   demo4是刚创建的仓库名称
+2、git pull origin master --allow-unrelated-histories
+3、git push -u origin master   【远程】
 
 
-�鿴�Ƿ�������
+查看是否连接上
 ssh -T git@github.com
 
 
@@ -32,155 +35,155 @@ ssh -T git@github.com
 
 
 
-1�����ȵð�װgit�ͻ���
+1、首先得安装git客户端
 
-��װ�����ܼ򵥣�����װQQ֮���һ�������������https://git-scm.com/ ������Ҳ�����windows�汾����������Ȼ��˫����װ��һ��һ����һ���Ϳ����ˡ�
+安装方法很简单，跟安装QQ之类的一样，进入官网：https://git-scm.com/ ，点击右侧下载windows版本的软件包，然后双击安装，一步一步下一步就可以了。
 
-��װ���֮���ڿ�ʼ�˵����Կ������¾����ǳɹ��ˣ�
-��ʱ������һ�ļ������һ���꣬�ῴ��Git Bash Here��������ɽ��뵽����ڣ����¡�
-
-
-2����GitHub�ϴ�����Ӧ�ֿ�
-
-��Ȼ����һǰ���������GitHub��վ���˺ţ�û�еĻ�����Ҫע��һ���ģ�ע���Ǻܷ���ģ���Ҫ���鷳��
-
-������������ѧϰ����ĿMxShopΪ�����ֿ⽨�����£���������ѡ��Public���Լ���ѡ��README��Ҳ������Ŀ˵����Ȼ�������½ǵĴ�����ť�Ϳ��ˣ��ҳ��ļ򵥡�
+安装完成之后，在开始菜单可以看到如下就算是成功了：
+此时，在任一文件夹上右击鼠标，会看到Git Bash Here，点击即可进入到命令窗口，如下。
 
 
-3��windows���ϴ��ļ���
+2、在GitHub上创建对应仓库
 
-���������ǻص�git bash������ڣ��������������ļ������Ҽ��򿪵ģ�����Ѿ���λ�����ļ���Ŀ¼�ˡ�
+当然，这一前提是你得有GitHub网站的账号，没有的话是需要注册一个的，注册是很方便的，不要嫌麻烦。
 
-����ͨ��pwd����鿴�ļ���λ�ã�
+我以现在正在学习的项目MxShop为例，仓库建立如下：这里我们选择Public，以及勾选上README，也就是项目说明。然后点击左下角的创建按钮就可了，灰常的简单。
 
 
-pwd #�鿴�ļ���λ��
+3、windows下上传文件夹
+
+接下来我们回到git bash的命令窗口，由于我们是在文件夹上右键打开的，因此已经定位到该文件夹目录了。
+
+可以通过pwd命令查看文件夹位置：
+
+
+pwd #查看文件夹位置
 
 1
-Ȼ�󣬽����ļ��б��Git���Թ����Ĳֿ⣺
+然后，将该文件夹变成Git可以管理的仓库：
 
 
 git init
 1
-���ǿ���ͨ��ls����鿴�ļ����е����ݣ�
+我们可以通过ls命令查看文件夹中的内容：
 
 
-ls #�鿴�ļ����е�����
+ls #查看文件夹中的内容
 1
-Ȼ��ͨ��git add�������ļ��ύ���ݴ�����
+然后通过git add将所有文件提交到暂存区：
 
 
 git add .
 1
-�����ǵ�һ���ύ����Ҫ�������ļ��������ύ�����һ��һ�����ύ̫�鷳��ͨ��. ������Խ������ļ��������ύ��
+由于是第一次提交，需要将所有文件都进行提交，如果一个一个的提交太麻烦，通过. 命令可以将所有文件都进行提交。
 
-��Ȼ��git commit -m '˵��'�ύ���汾���м��ɡ�
+再然后，git commit -m '说明'提交到版本库中即可。
 
 
 git commit -m 'the initial edition'
 1
-�������Ǳ��ڱ��ؽ������˲ֿ⣬��������Ҫ�����زֿ���GitHub��վ�Ĳֿ���й�����
+这样我们便在本地建立好了仓库，接下来需要将本地仓库与GitHub网站的仓库进行关联。
 
 
 git remote add origin https://github.com/geerniya/MxShop2.git
 1
-�������ַ�����Ǹղ���GitHub��վ�Ͻ����Ĳֿ�λ�ã����Դ���վ�Ͻ��и��ƣ�����
+后面的网址是我们刚才在GitHub网站上建立的仓库位置，可以从网站上进行复制，如下
 
-�ڽ����زֿ���GitHub��վ�ϵĲֿ���й����󣬱�ɽ��������ˣ������ڵ�һ�ν�������ʱ����Ҫע����ǣ�GitHub��վ�ϵĲֿⲢ���ǿյģ������ڴ���ʱ������һ��README�ĵ��������Ҫ�����߽��кϲ����С�
+在将本地仓库与GitHub网站上的仓库进行关联后，便可进行推送了，但是在第一次进行推送时，需要注意的是，GitHub网站上的仓库并非是空的，我们在创建时创建了一个README文档，因此需要将两者进行合并才行。
 
 git pull --rebase origin master
 
-����ڽ������ͼ���
+最后，在进行推送即可
 
 git push -u origin master
 
-�������-u���������ָ����master��֧���������ݶ��ύ����һ�ι���֮���������ύ�Ϳ��Բ�����������ˣ�֮�����ÿһ���޸ģ���Ϳ���ֻ�����޸�push�ͺ���
+这个带有-u这个参数是指，将master分支的所有内容都提交，第一次关联之后后边你再提交就可以不用这个参数了，之后你的每一次修改，你就可以只将你修改push就好了
 
 git push origin master
 
-�ص�GitHub��վˢ�������ǵ�MxShop2�ֿ⣬��ɿ����Ѿ���windows���ļ��е�����ȫ��ͬ�������ˡ�
+回到GitHub网站刷新下我们的MxShop2仓库，便可看到已经将windows上文件夹的内容全部同步过来了。
 
-4������ά��
+4、定期维护
 
-����ɵ�һ���ϴ���֮���ڱ��������޸ģ�������ͨ�������������ͬ��
-git add -A               #���ļ����޸��ϴ����ݴ���
-git commit -m '˵��'      #�ύ�����زֿ�
-git push origin master   #���͵�GitHub��վ��
-
-
-5��git��������
-mkdir�� XX (����һ����Ŀ¼ XXָĿ¼��)
-pwd�� ��ʾ��ǰĿ¼��·��
-git init �ѵ�ǰ��Ŀ¼��ɿ��Թ�����git�ֿ⣬��������.git�ļ���
-git add XX ��xx�ļ����ӵ��ݴ���ȥ
-git commit �Cm ��XX�� �ύ�ļ� �Cm �������ע�͡�
-git status �鿴�ֿ�״̬
-git diff XX �鿴XX�ļ��޸�����Щ����
-git log �鿴��ʷ��¼
-git reset �Chard HEAD^ ���� git reset �Chard HEAD~ ���˵���һ���汾
-cat XX �鿴XX�ļ�����
-
-git reflog �鿴��ʷ��¼�İ汾��id
-
-git checkout �� XX ��XX�ļ��ڹ��������޸�ȫ��������
-git remote add origin https://github.com/zongyunqingfeng/testgit ����һ��Զ�̿�
-
-git push �Cu(��һ��Ҫ��-u �Ժ���Ҫ) origin master �ѵ�ǰmaster��֧���͵�Զ�̿�
-git clone https://github.com/zongyunqingfeng/testgit ��Զ�̿��п�¡
-
-git checkout �Cb dev ����dev��֧ ���л���dev��֧��
-git branch �鿴��ǰ���еķ�֧
-
-git checkout master �л���master��֧
-
-git merge dev �ڵ�ǰ�ķ�֧�Ϻϲ�dev��֧
-git branch �Cd dev ɾ��dev��֧
-
-git branch name ������֧
-
-git stash �ѵ�ǰ�Ĺ����������� ���Ժ�ָ��ֳ����������
-git stash list �鿴���б����ص��ļ��б�
-
-git stash apply �ָ������ص��ļ����������ݲ�ɾ��
-
-git stash drop ɾ���ļ�
-git stash pop �ָ��ļ���ͬʱ Ҳɾ���ļ�
-
-git remote �鿴Զ�̿����Ϣ
-
-git remote �Cv �鿴Զ�̿����ϸ��Ϣ
-
-git push origin master Git���master��֧���͵�Զ�̿��Ӧ��Զ�̷�֧��
+在完成第一次上传后，之后在本地做的修改，都可以通过如下命令进行同步
+git add -A               #将文件的修改上传到暂存区
+git commit -m '说明'      #提交到本地仓库
+git push origin master   #推送到GitHub网站上
 
 
+5、git常用命令
+mkdir： XX (创建一个空目录 XX指目录名)
+pwd： 显示当前目录的路径
+git init 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
+git add XX 把xx文件添加到暂存区去
+git commit –m “XX” 提交文件 –m 后面的是注释。
+git status 查看仓库状态
+git diff XX 查看XX文件修改了那些内容
+git log 查看历史记录
+git reset –hard HEAD^ 或者 git reset –hard HEAD~ 回退到上一个版本
+cat XX 查看XX文件内容
+
+git reflog 查看历史记录的版本号id
+
+git checkout — XX 把XX文件在工作区的修改全部撤销。
+git remote add origin https://github.com/zongyunqingfeng/testgit 关联一个远程库
+
+git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+git clone https://github.com/zongyunqingfeng/testgit 从远程库中克隆
+
+git checkout –b dev 创建dev分支 并切换到dev分支上
+git branch 查看当前所有的分支
+
+git checkout master 切换回master分支
+
+git merge dev 在当前的分支上合并dev分支
+git branch –d dev 删除dev分支
+
+git branch name 创建分支
+
+git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+git stash list 查看所有被隐藏的文件列表
+
+git stash apply 恢复被隐藏的文件，但是内容不删除
+
+git stash drop 删除文件
+git stash pop 恢复文件的同时 也删除文件
+
+git remote 查看远程库的信息
+
+git remote –v 查看远程库的详细信息
+
+git push origin master Git会把master分支推送到远程库对应的远程分支上
 
 
 
-��¡�ֿ�
+
+
+克隆仓库
 git clone git@github.com:fj911001/school.git
 
 
-��ǩ����
-git commit -m "commit v1.1" ���ύ��
-git tag			// �鿴��ǩ
-git tag v1.1		// ������ǩ
-git push origin v1.1	// ��ǩ����
+标签管理
+git commit -m "commit v1.1" 【提交后】
+git tag			// 查看标签
+git tag v1.1		// 创建标签
+git push origin v1.1	// 标签发布
 
-git tag -a v1.1 -m "commit tag"	// ָ���ύ��Ϣ
-git tag -d v1.1 	// ɾ����ǩ
+git tag -a v1.1 -m "commit tag"	// 指定提交信息
+git tag -d v1.1 	// 删除标签
 
 
-��֧����
+分支管理
 
-git commit -m "sxxx" ���ύ��
-git branch feature_x ��������֧  ��֧���� featrue_x��
-git branch // �鿴���з�֧ ���Ǻ��ڵľ������ڷ�֧��
-git checkout feature_x ���л���֧�� 
-���ύ�Ĵ�������ύ����֧���ˣ�
+git commit -m "sxxx" 【提交后】
+git branch feature_x 【创建分支  分支名称 featrue_x】
+git branch // 查看所有分支 【星号在的就是所在分支】
+git checkout feature_x 【切换分支】 
+再提交的代码就是提交到分支上了；
 
-�ϲ���master
-git checkout master ���л���master
-git merge feature_x ���ϲ���
+合并到master
+git checkout master 先切换到master
+git merge feature_x 【合并】
 
-git brandch -d feature_x  // ɾ��
+git brandch -d feature_x  // 删除
 
